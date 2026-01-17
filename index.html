@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Go Cart Countdown</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH -->
+<div class="auth-wrapper auth-box">
+    <div class="auth-card">
+        <!-- LOGIN FORM -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <input id="login-email" type="email" placeholder="Email">
+            <input id="login-password" type="password" placeholder="Password">
+            <button id="login-btn" class="primary-btn">Login</button>
+            <div style="margin-top:8px;">
+                <span id="forgot-link" class="link">Forgot Password?</span>
+            </div>
+            <div class="switch">
+                Don't have an account? <span id="to-signup" style="color: #FF6B6B; cursor: pointer; font-weight: bold;">Sign Up</span>
+            </div>
+            <div id="auth-status" class="status"></div>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div id="signup-form" style="display:none;">
+            <h2>Sign Up</h2>
+            <input id="signup-email" type="email" placeholder="Email">
+            <input id="signup-password" type="password" placeholder="Password">
+            <button id="signup-btn" class="primary-btn">Sign Up</button>
+            <div class="switch">
+                Already have an account? <span id="to-login" style="color: #FF6B6B; cursor: pointer; font-weight: bold;">Login</span>
+            </div>
+            <div id="signup-status" class="status"></div>
+        </div>
+
+        <!-- FORGOT PASSWORD FORM -->
+        <div id="forgot-form" style="display:none;">
+            <h2>Reset Password</h2>
+            <input id="forgot-email" type="email" placeholder="Email">
+            <button id="forgot-btn" class="primary-btn">Send Reset Email</button>
+            <div class="switch">
+                <span id="back-to-login" style="color: #FF6B6B; cursor: pointer; font-weight: bold;">Back to Login</span>
+            </div>
+            <div id="forgot-status" class="status"></div>
+        </div>
+    </div>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none;">
+    <div class="container">
+        <h1>Cart Countdown</h1>
+        <button class="add-cart" onclick="addCart()">➕ Add Go Cart</button>
+        <div id="timers"></div>
+        <button onclick="logout()" class="delete">Logout</button>
+    </div>
+</div>
+
+<!-- MODULE SCRIPTS -->
+<script type="module" src="firebase.js"></script>
+<script type="module" src="auth.js"></script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
