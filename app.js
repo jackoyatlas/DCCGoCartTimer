@@ -45,7 +45,7 @@ const createCartElement = (id, name, desc, time) => {
 
 // Add new cart
 window.addCart = async () => {
-    const name = prompt("Enter cart name:");
+    const name = prompt("Enter Customer name:");
     if (!name || name.trim() === "") return; // Cancel if empty
     
     cartId++;
@@ -109,5 +109,6 @@ window.saveCart = async id => {
 onAuthStateChanged(auth, async user => {
     if (!user) return;
     // Do not load/display already saved carts
+
 
 });
