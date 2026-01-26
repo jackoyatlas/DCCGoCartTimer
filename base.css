@@ -1,0 +1,139 @@
+/* ========== ROOT VARIABLES ========== */
+:root {
+    --primary-gradient: linear-gradient(135deg, #E84C4C, #D94343);
+    --success-gradient: linear-gradient(135deg, #D94343, #E84C4C);
+    --racing-gradient: linear-gradient(135deg, #E84C4C, #FF6B6B, #D94343);
+    --checkered-bg: repeating-conic-gradient(#000 0% 25%, #fff 25% 50%) 50% / 20px 20px;
+
+    --color-success: #4CAF50;
+    --color-warning: #FFC107;
+    --color-danger: #F44336;
+    --color-gray: #9E9E9E;
+    --color-red: #D94343;
+    --color-green: #1E7E34;
+    --color-black: #000;
+    --color-white: #fff;
+
+    --spacing-sm: 5px;
+    --spacing-md: 10px;
+    --spacing-lg: 15px;
+    --spacing-xl: 30px;
+
+    --border-radius: 8px;
+    --border-radius-lg: 15px;
+}
+
+/* ========== RESET ========== */
+* {
+    box-sizing: border-box;
+}
+
+/* ========== BODY ========== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    width: 95%;
+    max-width: 750px;
+    background: rgba(45, 45, 45, 0.8);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    border: 1px solid rgba(232, 76, 76, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* ========== BUTTONS ========== */
+button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.start { background: var(--color-success); color: white; }
+.pause { background: var(--color-warning); color: black; }
+.reset { background: var(--color-danger); color: white; }
+.delete { background: var(--color-gray); color: black; }
+
+/* ========== INPUTS ========== */
+input, textarea {
+    width: 95%;
+    padding: 6px;
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--border-radius);
+    border: none;
+}
+
+/* ========== RESPONSIVE UTILITIES ========== */
+@media (max-width: 768px) {
+    .container {
+        width: 98%;
+        padding: var(--spacing-lg);
+        max-height: 95vh;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    button {
+        padding: 12px 18px;
+        font-size: 1.1rem;
+    }
+}
+
+/* ========== RACING THEME ELEMENTS ========== */
+.racing-flag {
+    background: var(--checkered-bg);
+    border: 2px solid var(--color-red);
+}
+
+.speed-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.speed-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: speedFlash 2s infinite;
+}
+
+@keyframes speedFlash {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: -100%; }
+}
